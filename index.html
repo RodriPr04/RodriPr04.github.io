@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movistar ChatBox</title>
+    <link rel="icon" href="./images.png" type="image/x-icon">
+    <style>
+        /* Estilos del Navbar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+      
+        /* Estilos de las Cards de Integrantes */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            gap: 20px;
+            flex-grow: 1; /* Para que ocupe el espacio disponible */
+          
+        }
+
+        .card {
+            background-color: #fff;
+            width: 200px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 120px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="./images.png" alt="Logo de la página">
+            <span>Movistar ChatBox</span>
+        </div>
+    </nav>
+
+
+
+    <!-- Cards de Integrantes -->
+    <div class="cards-container">
+ 
+        <div class="card">
+            <img src="./drive-pelicula-900x491.jpg" alt="Foto de Integrante 1">
+            <h3>Albarrán Jara Carlos Fernando</h3>
+            <p>A+</p>
+        </div>
+        <div class="card">
+            <img src="./XZZGV4X.jpeg" alt="Foto de Integrante 2">
+            <h3>Montenegro Baca Zee Ricardo</h3>
+            <p>A+</p>
+        </div>
+        <div class="card">
+            <img src="./andre.jpg" alt="Foto de Integrante 3">
+            <h3>Rodriguez Preciado André Jhonel</h3>
+            <p>A+</p>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "ffbf73ad-3cb0-4961-8984-b073030bacfc",
+          region: "us-south",
+          serviceInstanceID: "2f883b46-4d84-4d37-b5aa-739024a280d3",
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+    </script>
+</body>
+</html>
